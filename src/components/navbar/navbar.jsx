@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import logo from '../../Images/mylogo.png'
 const Navbar = () => {
     const [isSticky, setSticky] = useState(false);
 
@@ -44,7 +44,7 @@ const Navbar = () => {
     return (
         <div className={`flex flex-col sm:flex-row justify-between items-center text-xl space-x-8 w-full h-20 px-4 sm:px-8 ${isSticky ? 'fixed top-0 left-0 z-50 bg-transparent text-white' : 'bg-transparent text-black'}`}>
             <div className="w-12 transform origin-center hover:rotate-180 transition-transform cursor-pointer" onClick={refreshPage}>
-                <img src='./src/Images/mylogo.png' alt="Logo" />
+                <img src={logo} alt="Logo" />
             </div>
 
             <ul className="flex justify-center font-mono sm:flex-row">
