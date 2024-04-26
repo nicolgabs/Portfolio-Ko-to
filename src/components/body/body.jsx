@@ -1,3 +1,10 @@
+import mypicture from '../../Images/mypic.png'
+import htmlogo from '../../Images/htmlogo.png'
+import csslogo from '../../Images/csslogo.png'
+import jslogo from '../../Images/jslogo.png'
+
+
+
 const Content = () => {
   return (
     <div>
@@ -12,15 +19,15 @@ const Content = () => {
           </div>
         </div>
         <div className="flex-shrink-0">
-          <img className="w-96" src="./src/Images/mypic.png" alt="My Picture" />
+          <img className="w-96" src={mypicture} alt="My Picture" />
         </div>
       </div>
       <div id="skills" className="flex flex-col bg-black text-white min-h-screen">
         <h1 className="flex justify-center text-2xl font-mono bg-red-900 w-full text-white">SKILLS</h1>
         <div className="flex flex-col md:flex-row justify-center items-center">
-          <img className="w-48 h-48 m-2" src='./src/Images/htmlogo.png' alt="HTML Logo" />
-          <img className="w-48 h-48 m-2" src='./src/Images/csslogo.png' alt="CSS Logo" />
-          <img className="w-48 h-48 m-2" src='./src/Images/jslogo.png' alt="JavaScript Logo" />
+          <img className="w-48 h-48 m-2" src={htmlogo} alt="HTML Logo" />
+          <img className="w-48 h-48 m-2" src={csslogo} alt="CSS Logo" />
+          <img className="w-48 h-48 m-2" src={jslogo} alt="JavaScript Logo" />
         </div>
       </div>
       <div id="projects" className="min-h-screen bg-black text-white">
