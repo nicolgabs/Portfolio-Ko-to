@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import logo from '../../Images/mylogo.png'
+import logo from '../../Images/mylogo.png';
+
 const Navbar = () => {
     const [isSticky, setSticky] = useState(false);
 
@@ -18,10 +19,6 @@ const Navbar = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-
-    const refreshPage = () => {
-        window.location.reload();
-    };
 
     const links = [
         {
@@ -42,8 +39,8 @@ const Navbar = () => {
     ];
 
     return (
-        <div className={`flex flex-col sm:flex-row justify-between items-center text-xl space-x-8 w-full h-20 px-4 sm:px-8 ${isSticky ? 'fixed top-0 left-0 z-50 bg-transparent text-white' : 'bg-transparent text-black'}`}>
-            <div className="w-12 transform origin-center hover:rotate-180 transition-transform cursor-pointer" onClick={refreshPage}>
+        <div className={`flex flex-col sm:flex-row justify-between items-center text-xl space-x-8 w-full h-20 px-4 sm:px-8 fixed top-0 left-0 z-50 ${isSticky ? 'bg-gray-800 text-white' : 'bg-white text-black shadow-lg'} transition-all duration-300`}>
+            <div className="w-12 transform origin-center hover:rotate-180 transition-transform cursor-pointer">
                 <img src={logo} alt="Logo" />
             </div>
 
