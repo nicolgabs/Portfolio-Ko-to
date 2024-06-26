@@ -14,7 +14,7 @@ const Body = () => {
                     <p className="text-lg text-white">Web Developer</p>
                     <div className="flex-wrap">
                         <a href='./src/images/Nicolas-Gaviola-Resume.pdf' download>
-                            <button className="font-mono mt-4 bg-red-900 text-white w-fit px-4 py-2 rounded-md text-lg px-4 cursor-pointer capitalize text-black font-md hover:scale-125 duration-200">Download CV</button>
+                            <button className="font-mono mt-4 bg-red-900 text-white w-fit  py-2 rounded-md text-lg px-4 cursor-pointer capitalize  font-md hover:scale-125 duration-200">Download CV</button>
                         </a>
                     </div>
                 </div>
