@@ -2,15 +2,23 @@ import { useState, useEffect } from 'react';
 import logo from '../../Images/mylogo.png';
 
 const Navbar = () => {
-    const [isSticky, setSticky] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
+    const [lastScrollTop, setLastScrollTop] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 20) {
-                setSticky(true);
+            const currentScrollTop = window.scrollY;
+
+          
+            if (currentScrollTop > lastScrollTop) {
+                
+                setIsHidden(true);
             } else {
-                setSticky(false);
+                
+                setIsHidden(false);
             }
+
+            setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -18,18 +26,18 @@ const Navbar = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [lastScrollTop]);
 
     const links = [
         {
             id: 1,
-            link: 'Projects',
-            path: '#projects'
+            link: 'Skills',
+            path: '#skills'
         },
         {
             id: 2,
-            link: 'Skills',
-            path: '#skills'
+            link: 'Projects',
+            path: '#projects'
         },
         {
             id: 3,
@@ -39,7 +47,7 @@ const Navbar = () => {
     ];
 
     return (
-        <div className={`flex flex-col sm:flex-row justify-between items-center text-xl space-x-8 w-full h-20 px-4 sm:px-8 fixed top-0 left-0 z-50 ${isSticky ? 'bg-gray-800 text-white' : 'bg-white text-black shadow-lg'} transition-all duration-300`}>
+        <div className={`fixed top-0 left-0 w-full h-20 px-4 sm:px-8 flex flex-col sm:flex-row justify-between items-center text-xl space-x-8 z-50 transition-transform duration-300 ${isHidden ? '-translate-y-full' : 'translate-y-0'} ${isHidden ? '':'bg-white text-black shadow-lg'}`}>
             <div className="w-12 transform origin-center hover:rotate-180 transition-transform cursor-pointer">
                 <img src={logo} alt="Logo" />
             </div>
