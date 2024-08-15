@@ -52,7 +52,7 @@ const Navbar = () => {
                 <img src={logo} alt="Logo" />
             </div>
 
-            <ul className="flex justify-center font-mono sm:flex-row">
+            <ul className="flex justify-center barlow-semi-bold font-semibold sm:flex-row">
                 {links.map(({ id, link, path }) => (
                     <li key={id} className="px-4 cursor-pointer capitalize font-md hover:scale-105 duration-200">
                         <a href={path}>{link}</a>
