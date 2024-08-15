@@ -1,4 +1,5 @@
 import mypicture from '../../Images/mypic.png';
+import gtfootwear from '../../Images/gtfootwear.png'
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGithub, FaWordpress } from 'react-icons/fa';
 
 const skills = [
@@ -9,6 +10,26 @@ const skills = [
   { icon: <FaGithub />, title: 'Github' },
   { icon: <FaWordpress />, title: 'Wordpress' }
 ];
+const project=[
+  {title:'GT FOOTWEAR',
+    description:"An e-commerce platform for purchasing shoes online.",
+    image: gtfootwear,
+    technologies:["ReactJS", "TailwindCSS"],
+    /*link:*/
+  },
+  {title:'GT FOOTWEAR',
+    description:"An e-commerce platform for purchasing shoes online.",
+    image: gtfootwear,
+    technologies:["ReactJS", "TailwindCSS"],
+    /*link:*/
+  },
+  {title:'GT FOOTWEAR',
+    description:"An e-commerce platform for purchasing shoes online.",
+    image: gtfootwear,
+    technologies:["ReactJS", "TailwindCSS"],
+    /*link:*/
+  },
+]
 
 const Body = () => {
   return (
@@ -61,10 +82,10 @@ const Body = () => {
         {/* Profile Info */}
         <div className="mt-8 text-center max-w-xl">
           <p className="text-gray-400 leading-relaxed">
-            Hi! I'm Nicolas, a fresh graduate from Holy Angel University with a degree in Information Technology, specializing in <strong>Web Development.</strong>
+            Hi! I&apos;m Nicolas, a fresh graduate from Holy Angel University with a degree in Information Technology, specializing in <strong>Web Development.</strong>
           </p>
           <p className="text-gray-400 leading-relaxed mt-4">
-            I’m skilled in front-end development and have a keen interest in crafting engaging and responsive websites. My expertise includes <strong>HTML, CSS, JavaScript, and ReactJS</strong>. I love designing intuitive interfaces and improving user experiences.
+            I’m skilled in front-end development and have a keen interest in crafting engaging and responsive websites. My expertise includes <strong>HTML, CSS, JavaScript, ReactJS and TailwindCSS</strong>. I love designing responsive website and improving user experiences.
           </p>  
         </div>
       </div>
@@ -91,6 +112,24 @@ const Body = () => {
         <h1 className="text-3xl font-bold text-center py-2 border-t-2 border-gray-700">
           PROJECTS
         </h1>
+        <div className="flex flex-col md:flex-row items-center gap-8 justify-center p-8">
+          {project.map((project, index) => (
+            <div key={index} className="bg-gray-900 p-2 rounded-lg shadow-lg max-w-xl w-full ">
+              <img className=" h-92 w-92 rounded-md" src={project.image} alt={project.title} />
+              <h2 className="text-2xl font-bold mt-4">{project.title}</h2>
+              <p className="text-gray-400 mt-2">{project.description}</p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                {project.technologies.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="bg-red-600 text-white text-xs px-2 py-1 rounded-full">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Contact Section */}
