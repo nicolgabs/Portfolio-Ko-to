@@ -73,7 +73,7 @@ const Body = () => {
 
             {/* Skills Icons */}
             <div className="flex space-x-4 mt-4 justify-center md:justify-start">
-              {skills.slice(0, 5).map((skill, index) => (
+              {skills.slice(0, 6).map((skill, index) => (
                 <div key={index} className="text-3xl text-gray-400">
                   {skill.icon}
                 </div>
