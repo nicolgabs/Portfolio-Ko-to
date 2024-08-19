@@ -1,5 +1,6 @@
 import mypicture from '../../Images/mypic.png';
 import gtfootwear from '../../Images/gtfootwear.png';
+import cafejuan2 from '../../Images/cafejuan2.png';
 import { TypeAnimation } from 'react-type-animation';
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGithub, FaWordpress } from 'react-icons/fa';
 
@@ -15,13 +16,13 @@ const project=[
   {title:'GT FOOTWEAR',
     description:"An e-commerce platform for purchasing shoes online.",
     image: gtfootwear,
-    technologies:["ReactJS", "TailwindCSS"],
+    technologies:["ReactJS", "TailwindCSS","Django"],
     /*link:*/
   },
-  {title:'GT FOOTWEAR',
-    description:"An e-commerce platform for purchasing shoes online.",
-    image: gtfootwear,
-    technologies:["ReactJS", "TailwindCSS"],
+  {title:'CAFE JUAN INVENTORY MANAGEMENT SYSTEM',
+    description:"An inventory management system for a Cafe.",
+    image: cafejuan2,
+    technologies:["ReactJS", "MaterialUI","Django"],
     /*link:*/
   },
   {title:'GT FOOTWEAR',
