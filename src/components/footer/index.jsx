@@ -3,7 +3,7 @@ const Footer = () => {
     return(
 <div className="bg-red-900">
     <h1 className="text-white text-center">
-        Footer
+    © Nicolas Gaviola Jr
     </h1>
 </div>
     
