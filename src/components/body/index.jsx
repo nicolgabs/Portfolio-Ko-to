@@ -1,8 +1,14 @@
-import mypicture from '../../Images/mypic.png';
+import mypicture from '../../Images/mypicture.jpg';
 import gtfootwear from '../../Images/gtfootwear.png';
 import cafejuan2 from '../../Images/cafejuan2.png';
 import { TypeAnimation } from 'react-type-animation';
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGithub, FaWordpress } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGithub, FaWordpress,FaFacebook,FaEnvelope,FaLinkedin } from 'react-icons/fa';
+
+const contacts = [
+  {icon: <FaFacebook/>, link:'https://www.facebook.com/nicolgavz/'},
+  {icon: <FaLinkedin/>, link:'https://www.linkedin.com/in/nicolas-gaviola-jr-840a50292/'},
+  {icon: <FaEnvelope/>, link:'mailto:nicolgaviola@gmail.com'}
+]
 
 const skills = [
   { icon: <FaHtml5 />, title: 'HTML' },
@@ -33,6 +39,7 @@ const project=[
   },
 ]
 
+
 const Body = () => {
   return (
     <div className="bg-black text-white">
@@ -43,7 +50,7 @@ const Body = () => {
       >
         {/* Profile Section */}
         <div className="flex flex-col md:flex-row items-center text-center md:text-left">
-          {/* Profile Image */}
+
           <img
             className="w-64 h-64 md:w-72 md:h-72 rounded-full border-4 border-gray-700 shadow-xl"
             src={mypicture}
@@ -56,7 +63,7 @@ const Body = () => {
             </h1>
 
             
-            <p className="text-xl md:text-2xl text-gray-400  mt-2">
+            <p className="text-xl md:text-2xl text-gray-400 mt-2">
             YOUR ASPIRING {' '}
               <TypeAnimation 
                 sequence={[
@@ -72,16 +79,19 @@ const Body = () => {
               />
             </p>
 
-            {/* Skills Icons */}
+            {/* PROFILE Skills Icons */}
             <div className="flex space-x-4 mt-4 justify-center md:justify-start">
-              {skills.slice(0, 6).map((skill, index) => (
-                <div key={index} className="text-3xl text-gray-400">
-                  {skill.icon}
-                </div>
+              {contacts.map((contact, index) => (
+                <a key={index} href={contact.link} target="_blank" rel="noopener noreferrer">
+                  <div className="text-3xl text-gray-400 hover:scale-150 duration-200">
+                    {contact.icon}
+                  </div>
+                </a>
               ))}
             </div>
+
             <div className="mt-6">
-              <a  href="mailto:nicolgaviola@gmail.com">
+              <a href="mailto:nicolgaviola@gmail.com">
                 <button className="bg-red-600 text-white py-2 px-6 rounded-md hover:bg-red-700 transition duration-300 font-bold">
                   Hire Me
                 </button>
@@ -95,7 +105,7 @@ const Body = () => {
           </div>
         </div>
 
-        {/* Profile Info */}
+
         <div className="mt-8 text-center max-w-xl">
           <p className="text-gray-400 leading-relaxed">
             Hi! I&apos;m Nicolas, a fresh graduate from Holy Angel University with a degree in Information Technology, specializing in <strong>Web Development.</strong>
@@ -106,7 +116,7 @@ const Body = () => {
         </div>
       </div>
 
-      {/* Skills Section */}
+    
       <div id="skills" className="bg-black text-white">
         <h1 className="text-3xl font-bold text-center py-2 mb-6 border-t-2 border-gray-700">
           SKILLS
@@ -123,14 +133,14 @@ const Body = () => {
         </div>
       </div>
 
-      {/* Projects Section */}
-      <div id="projects" className="min-h-screen bg-black text-white">
+    
+      <div id="projects" className="bg-black text-white pb-12">
         <h1 className="text-3xl font-bold text-center py-2 border-t-2 border-gray-700">
           PROJECTS
         </h1>
         <div className="flex flex-col md:flex-row items-center gap-8 justify-center p-8 ">
           {project.map((project, index) => (
-            <div key={index} className="bg-gray-900 p-2 rounded-lg shadow-lg max-w-xl w-full shadow-gray-500 ">
+            <div key={index} className="bg-gray-900 p-2 rounded-lg shadow-lg max-w-xl w-full shadow-gray-500 hover:scale-105 duration-200">
               <img className=" h-92 w-92 rounded-md" src={project.image} alt={project.title} />
               <h2 className="text-2xl font-bold mt-4 barlow-semi-bold">{project.title}</h2>
               <p className="text-gray-400 mt-2 barlow-semi-regular ">{project.description}</p>
@@ -148,14 +158,47 @@ const Body = () => {
         </div>
       </div>
 
-      {/* Contact Section */}
-      <div id="contact" className="min-h-screen bg-black text-white">
-        <h1 className="text-3xl font-bold text-center py-2 border-t-2 border-gray-700">
-          CONTACT
-        </h1>
+
+      <div id="contact" className="min-h-screen bg-black text-white ">
+        <h1 className="text-3xl font-bold text-center py-8 border-t-2 border-gray-700">CONTACT ME</h1> 
+
+        <div className='flex flex-col items-center justify-center' >
+        <div className="bg-gray-800 rounded-lg shadow-lg p-8 max-w-xl w-full">
+          <form action="https://formspree.io/f/mpwajdkv" method="POST" className="flex flex-col space-y-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              className="p-3 bg-gray-900 rounded-md focus:ring-2 focus:ring-red-600 focus:outline-none"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              className="p-3 bg-gray-900 rounded-md focus:ring-2 focus:ring-red-600 focus:outline-none"
+              required
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              className="p-3 bg-gray-900 rounded-md focus:ring-2 focus:ring-red-600 focus:outline-none"
+              required
+            ></textarea>
+            <button
+              type="submit"
+              className="bg-red-600 text-white py-2 px-6 rounded-md hover:bg-red-700 transition duration-300 font-bold"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
       </div>
+      </div> 
     </div>
   );
 };
 
 export default Body;
+
