@@ -96,7 +96,7 @@ const Body = () => {
                   Hire Me
                 </button>
               </a>
-              <a href="./src/images/Nicolas-Gaviola-Resume.pdf" download className="ml-4">
+              <a href="/src/images/Nicolas-Gaviola-Resume.pdf" download className="ml-4">
                 <button className="bg-transparent border-2 border-gray-400 text-gray-400 py-2 px-6 rounded-md hover:bg-gray-700 hover:text-white transition duration-300 font-bold">
                   Resume
                 </button>
