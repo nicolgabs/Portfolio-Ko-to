@@ -1,4 +1,6 @@
 import mypicture from '../../Images/mypicture.jpg';
+import basketballsponsor from '../../Images/Thankyou_Sponsors.png';
+import semisposter from '../../Images/semisposter.png';
 import gtfootwear from '../../Images/gtfootwear.png';
 import cafejuan2 from '../../Images/cafejuan2.png';
 import { TypeAnimation } from 'react-type-animation';
@@ -38,7 +40,21 @@ const project=[
     /*link:*/
   },
 ]
-
+const graphicdesign=[
+  {title:'Basketball Poster',
+    description:"A Basketball Poster for a Basketball Sponsorship",
+    image: basketballsponsor,
+    technologies:["Adobe Photoshop"],
+    /*link:*/
+  },
+  {
+    title:'Semi Finals Poster Basketball',
+    description:"A Basketball Poster for a Semi Final Matchup",
+    image: semisposter,
+    technologies:["Adobe Photoshop"],
+    /*link:*/ 
+  },
+]
 
 const Body = () => {
   return (
@@ -157,8 +173,31 @@ const Body = () => {
           ))}
         </div>
       </div>
-
-
+      <div id="graphic-design" className="bg-black text-white pb-12">
+  <h1 className="text-3xl font-bold text-center py-2 border-t-2 border-gray-700">
+    GRAPHIC DESIGN
+  </h1>
+  <div className="flex flex-col md:flex-row items-center gap-8 justify-center p-8">
+    {graphicdesign.map((design, index) => (
+      <div key={index} className="bg-gray-900 p-2 rounded-lg shadow-lg max-w-xl w-full shadow-gray-500 hover:scale-105 duration-200">
+        <a href={design.image} target="_blank" rel="noopener noreferrer">
+          <img className="h-92 w-92 rounded-md" src={design.image} alt={design.title} />
+        </a>
+        <h2 className="text-2xl font-bold mt-4 barlow-semi-bold">{design.title}</h2>
+        <p className="text-gray-400 mt-2 barlow-semi-regular">{design.description}</p>
+        <div className="flex flex-wrap gap-2 mt-4 barlow-semi-bold">
+          {design.technologies.map((tech, idx) => (
+            <span
+              key={idx}
+              className="bg-red-600 text-white text-xs px-2 py-1 rounded-full">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
       <div id="contact" className="min-h-screen bg-black text-white ">
         <h1 className="text-3xl font-bold text-center py-8 border-t-2 border-gray-700">CONTACT ME</h1> 
 
